@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- START SCREEN -->
+    <section id="startScreen" class="card">
+
+        <h1>🧠 Smart Quiz Portal</h1>
+
+        <p class="subtitle">
+            Test Your Programming Knowledge
+        </p>
+
+        <div class="topics">
+            <span>Java</span>
+            <span>Python</span>
+            <span>HTML</span>
+            <span>JavaScript</span>
+            <span>C</span>
+        </div>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+        >
+
+        <p id="error" class="error"></p>
+
+        <button onclick="startQuiz()">
+            Start Quiz 🚀
+        </button>
+
+    </section>
+
+
+    <!-- QUIZ SCREEN -->
+    <section id="quizScreen" class="card hidden">
+
+        <div class="quiz-header">
+
+            <span id="questionNumber">
+                Question 1 of 10
+            </span>
+
+            <span>
+                Smart Quiz
+            </span>
+
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <h2 id="question">
+            Question
+        </h2>
+
+        <div id="options"></div>
+
+        <div class="navigation">
+
+            <button
+                id="previousBtn"
+                onclick="previousQuestion()"
+            >
+                ← Previous
+            </button>
+
+            <button
+                id="nextBtn"
+                onclick="nextQuestion()"
+            >
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT SCREEN -->
+    <section id="resultScreen" class="card hidden">
+
+        <div class="success">
+            ✓
+        </div>
+
+        <h1>Test Submitted Successfully!</h1>
+
+        <p id="studentName"></p>
+
+        <div class="result-box">
+
+            <div>
+                <h3 id="totalQuestions">10</h3>
+                <p>Total</p>
+            </div>
+
+            <div>
+                <h3 id="correctAnswers">0</h3>
+                <p>Correct</p>
+            </div>
+
+            <div>
+                <h3 id="wrongAnswers">0</h3>
+                <p>Wrong</p>
+            </div>
+
+        </div>
+
+        <h2 id="finalScore"></h2>
+
+        <button onclick="showWrongAnswers()">
+            🔎 Review Wrong Answers
+        </button>
+
+        <button onclick="restartQuiz()">
+            🔄 Try Again
+        </button>
+
+
+        <!-- WRONG ANSWERS -->
+        <div id="wrongSection" class="wrong-section hidden">
+
+            <h2>❌ Wrong Answers</h2>
+
+            <div id="wrongAnswersList"></div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
